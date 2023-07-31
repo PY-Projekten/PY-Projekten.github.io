@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .envelope {
+      width: 300px;
+      height: 200px;
+      background-color: #D3D3D3;
+      position: relative;
+      transition: height 1s;
+    }
+    .envelope.open {
+      height: 100px;
+    }
+    .flap {
+      width: 300px;
+      height: 100px;
+      background-color: #D3D3D3;
+      position: absolute;
+      top: 0;
+      transition: top 1s;
+    }
+    .envelope.open .flap {
+      top: -100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope">
+    <div class="flap"></div>
+  </div>
+  <button onclick="openEnvelope()">Open</button>
+
+  <script>
+    function openEnvelope() {
+      var envelope = document.querySelector('.envelope');
+      envelope.classList.add('open');
+    }
+  </script>
+</body>
+</html>
